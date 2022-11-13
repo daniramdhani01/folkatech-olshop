@@ -1,0 +1,20 @@
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/maps";
+// @import "../node_modules/bootstrap/scss/mixins";
+// @import "../node_modules/bootstrap/scss/root";
+
+$custom-colors: (
+  "grey": #F5F5F5,
+  "primary": #EB3F36,
+  "primary-dark": #730C07,
+  "info":#6F8EFF,
+);
+$font-sizes: (
+  7: 14px,//0.75rem,
+  8: 0.5rem,
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+// import bootstrap styles at the bottom!
+@import '~bootstrap/scss/bootstrap.scss';

@@ -1,15 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { AuthInit, AuthProvider, } from "./moduls/Auth";
+import reportWebVitals from "./reportWebVitals";
+import AppRoutes from "./routing/AppRoutes";
+import "./custom.scss";
+
+if (process.env.NODE_ENV === "production") {
+  console.log = () => {};
+  console.error = () => {};
+  console.debug = () => {};
+}
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      {/* <AuthInit> */}
+        <AppRoutes />
+      {/* </AuthInit> */}
+    </AuthProvider>
   </React.StrictMode>
 );
 
